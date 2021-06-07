@@ -24,25 +24,24 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public Optional<Product> getProduct(Long id){
-        return productRepository.findById(id);
+    public Optional<Product> getProduct(Long barcode){
+        return productRepository.findById(barcode);
     }
 
     public List<Product> searchProduct(String productName){
         return productRepository.searchFor(productName);
     }
 
-    public Product searchProductId(Long id){
-        return productRepository.searchForId(id);
+    public Product searchProductId(Long barcode){
+        return productRepository.searchForId(barcode);
     }
 
-    public void deleteWithId(Long id){
-        productRepository.deleteId(id);
+    public void deleteWithId(Long barcode){
+        productRepository.deleteId(barcode);
     }
 
     public void deleteAll(){
         productRepository.deleteAll();
     }
 
-//    public void updateProduct(long id, String productName, String description, float rating, String img){productRepository.updateProduct(id, productName, description, rating, img);}
 }

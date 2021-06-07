@@ -3,8 +3,9 @@ package com.project.mobilki.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Date;
 
-@Table(name = "t_product")
+@Table(name = "products")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,9 +13,9 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "barcode")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+    private Long barcode;
 
     @Column(name = "product_name")
     private String productName;
@@ -22,7 +23,10 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "bar_code")
-    private String bar_code;
+    @Column(name = "expiration_date")
+    private Date expirationDate;
+
+    @Column(name = "weight")
+    private int weight;
 
 }

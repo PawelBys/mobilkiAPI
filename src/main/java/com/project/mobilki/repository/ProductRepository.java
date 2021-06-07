@@ -17,22 +17,17 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("Select p FROM Product p WHERE p.productName = ?1")
     List<Product> searchFor(String productName);
 
-    @Query("Select p FROM Product p WHERE p.id = ?1")
+    @Query("Select p FROM Product p WHERE p.barcode = ?1")
     Product searchForId(Long id);
 
     @Transactional
     @Modifying
-    @Query("DELETE FROM Product p WHERE p.id = :id")
+    @Query("DELETE FROM Product p WHERE p.barcode = :id")
     void deleteId(@Param("id") Long id);
 
     @Transactional
     @Modifying
     @Query("DELETE FROM Product p")
     void deleteAll();
-
-//    @Transactional
-//    @Modifying
-//    @Query("UPDATE Product p SET p.productName = :pN, p.description = :des, p.rating = :rate, p.img = :im WHERE p.id = :id")
-//    void updateProduct(@Param("id") long id, @Param("pN") String productName, @Param("des") String description, @Param("rate") float rating, @Param("im") String img);
 
 }

@@ -51,9 +51,4 @@ public class ProductController {
     @RequestMapping(value = "/killall", method = RequestMethod.DELETE)
     public void deleteAll(){productService.deleteAll();}
 
-//    @RequestMapping(value = "/updateproduct", method = RequestMethod.PATCH)
-//    public void updateProduct(@RequestParam long id, @RequestParam String productName, @RequestParam String description, @RequestParam float rating, @RequestParam String img){
-//        productService.updateProduct(id, productName, description, rating, img);
-//    }
-
 }
