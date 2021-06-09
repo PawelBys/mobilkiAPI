@@ -14,19 +14,18 @@ public class Product {
 
     @Id
     @Column(name = "barcode")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long barcode;
 
-    @Column(name = "product_name")
+    @Column(name = "name")
     private String productName;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "expiration_date")
-    private Date expirationDate;
-
     @Column(name = "weight")
     private int weight;
+
+    @Column(name = "company")
+    private String company;
 
 }
