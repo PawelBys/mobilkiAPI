@@ -28,7 +28,7 @@ public class ProductService {
         return productRepository.findById(barcode);
     }
 
-    public List<Product> searchProduct(String productName){
+    public Product searchProduct(String productName){
         return productRepository.searchFor(productName);
     }
 
