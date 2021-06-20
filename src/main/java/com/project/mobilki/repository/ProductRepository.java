@@ -15,7 +15,7 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("Select p FROM Product p WHERE p.productName = ?1")
-    List<Product> searchFor(String productName);
+    Product searchFor(String productName);
 
     @Query("Select p FROM Product p WHERE p.barcode = ?1")
     Product searchForId(Long id);

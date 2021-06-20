@@ -12,7 +12,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/products")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost/", allowedHeaders = "*", allowCredentials = "true")
+
 public class ProductController {
 
     @Autowired
@@ -34,7 +34,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public List<Product> searchProduct(@RequestParam String productName){
+    public Product searchProduct(@RequestParam String productName){
         return productService.searchProduct(productName);
     }
 
