@@ -36,8 +36,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public List<User> searchUser(@RequestParam String email, String password){
-        return userService.searchProduct(email, password);
+    public User searchUser(@RequestParam String email, String password){
+        return userService.searchUser(email, password);
     }
 
     @RequestMapping(value = "/searchid", method = RequestMethod.GET)

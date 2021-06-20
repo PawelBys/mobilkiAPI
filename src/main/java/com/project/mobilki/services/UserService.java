@@ -30,7 +30,7 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public List<User> searchProduct(String email, String password){
+    public User searchUser(String email, String password){
         return userRepository.searchFor(email, password);
     }
 
